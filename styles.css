@@ -244,13 +244,20 @@ img {
   position: relative;
   z-index: 3;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.56fr);
-  gap: clamp(28px, 5vw, 72px);
+  grid-template-columns: 1fr;
   align-items: center;
 }
 
 .hero-copy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.56fr);
+  gap: 0 clamp(28px, 5vw, 72px);
+  align-items: center;
   min-width: 0;
+}
+
+.hero-copy > :not(.hero-ballot) {
+  grid-column: 1;
 }
 
 .kicker {
@@ -294,6 +301,8 @@ img {
 
 .hero-ballot {
   position: relative;
+  grid-column: 2;
+  grid-row: 1 / span 5;
   align-self: end;
   justify-self: end;
   width: min(42vw, 520px);
@@ -867,6 +876,7 @@ button:focus-visible {
   }
 
   .hero-grid,
+  .hero-copy,
   .statement-layout,
   .summary-layout,
   .signature-card {
@@ -874,6 +884,8 @@ button:focus-visible {
   }
 
   .hero-ballot {
+    grid-column: 1;
+    grid-row: auto;
     width: min(58vw, 300px);
     justify-self: center;
     margin: 20px 0 -12px;
