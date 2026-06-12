@@ -348,14 +348,14 @@ img {
   position: sticky;
   top: 116px;
   border-top: 7px solid var(--scfp-blue);
-  max-width: 17rem;
+  max-width: 16rem;
   padding-top: 18px;
 }
 
 .intro-mark span {
   display: block;
   color: var(--scfp-blue);
-  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-size: clamp(1.65rem, 2.75vw, 2.55rem);
   font-weight: 900;
   line-height: 0.98;
   text-transform: uppercase;
@@ -592,9 +592,6 @@ strong {
 
 .final-cta {
   margin-top: 0;
-  background: var(--paper);
-  color: var(--ink);
-  border-color: var(--paper);
 }
 
 .modal-open {
@@ -948,7 +945,7 @@ button:focus-visible {
   }
 
   .intro-mark span {
-    font-size: clamp(1.55rem, 7.5vw, 2.45rem);
+    font-size: clamp(1.45rem, 6.5vw, 2.15rem);
   }
 
   .section-image-break-grid {
