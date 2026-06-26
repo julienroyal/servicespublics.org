@@ -603,6 +603,58 @@ strong {
   margin-top: 0;
 }
 
+.signatories-section {
+  padding: clamp(64px, 9vw, 118px) 0;
+  background:
+    linear-gradient(180deg, var(--scfp-blue-deep) 0, var(--scfp-blue-deep) 42px, var(--paper-warm) 42px);
+  color: var(--ink);
+}
+
+.signatories-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(300px, 1fr);
+  gap: clamp(28px, 5vw, 76px);
+  align-items: stretch;
+  padding: clamp(26px, 5vw, 56px);
+  background: var(--paper);
+  border: 2px solid var(--scfp-blue);
+  border-radius: var(--radius);
+}
+
+.signatories-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: clamp(26px, 5vw, 56px);
+  width: clamp(64px, 10vw, 116px);
+  height: 8px;
+  background: var(--scfp-red);
+}
+
+.signatories-card h2 {
+  max-width: 16ch;
+  margin: 0;
+  color: var(--scfp-blue);
+  font-size: clamp(1.75rem, 3.6vw, 3.35rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.signatories-card p {
+  display: flex;
+  align-items: center;
+  max-width: 42rem;
+  margin: 0;
+  padding: clamp(20px, 3vw, 34px);
+  background: var(--scfp-blue);
+  color: var(--paper);
+  font-size: clamp(1.06rem, 1.45vw, 1.24rem);
+  font-weight: 800;
+  line-height: 1.48;
+}
+
 .modal-open {
   overflow: hidden;
 }
@@ -879,7 +931,8 @@ button:focus-visible {
   .hero-copy,
   .statement-layout,
   .summary-layout,
-  .signature-card {
+  .signature-card,
+  .signatories-card {
     grid-template-columns: 1fr;
   }
 
@@ -895,6 +948,10 @@ button:focus-visible {
   .intro-mark {
     max-width: 30rem;
     position: static;
+  }
+
+  .signatories-card h2 {
+    max-width: 20ch;
   }
 
   .commitment {
@@ -958,6 +1015,31 @@ button:focus-visible {
 
   .intro-mark span {
     font-size: clamp(1.45rem, 6.5vw, 2.15rem);
+  }
+
+  .signatories-section {
+    padding: 56px 0 72px;
+    background:
+      linear-gradient(180deg, var(--scfp-blue-deep) 0, var(--scfp-blue-deep) 28px, var(--paper-warm) 28px);
+  }
+
+  .signatories-card {
+    padding: 24px;
+  }
+
+  .signatories-card::before {
+    left: 24px;
+    width: 76px;
+  }
+
+  .signatories-card h2 {
+    font-size: clamp(1.45rem, 7vw, 2.05rem);
+    line-height: 1.02;
+  }
+
+  .signatories-card p {
+    padding: 20px;
+    font-size: 1rem;
   }
 
   .section-image-break-grid {
