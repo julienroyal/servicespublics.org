@@ -642,10 +642,11 @@ strong {
   text-transform: uppercase;
 }
 
-.signatories-card p {
-  display: flex;
-  align-items: center;
-  max-width: 42rem;
+.signatories-content {
+  min-width: 0;
+}
+
+.signatories-content > p {
   margin: 0;
   padding: clamp(20px, 3vw, 34px);
   background: var(--scfp-blue);
@@ -653,6 +654,92 @@ strong {
   font-size: clamp(1.06rem, 1.45vw, 1.24rem);
   font-weight: 800;
   line-height: 1.48;
+}
+
+.signatories-content > p strong {
+  color: inherit;
+}
+
+.party-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.party-group {
+  border: 2px solid var(--scfp-blue);
+  background: var(--paper);
+}
+
+.party-group summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 58px;
+  padding: 14px 18px;
+  color: var(--scfp-blue);
+  font-weight: 900;
+  cursor: pointer;
+  list-style: none;
+}
+
+.party-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.party-group summary::after {
+  content: "+";
+  display: grid;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  background: var(--scfp-blue);
+  color: var(--paper);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.party-group[open] summary::after {
+  content: "−";
+}
+
+.party-group summary strong {
+  margin-left: auto;
+  color: var(--scfp-red);
+  font-size: 0.95rem;
+}
+
+.candidate-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid var(--scfp-blue);
+  list-style: none;
+}
+
+.candidate-list li {
+  display: grid;
+  gap: 3px;
+  padding: 12px 14px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.candidate-list span {
+  color: var(--ink);
+  font-weight: 900;
+  line-height: 1.22;
+}
+
+.candidate-list em {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-style: normal;
+  line-height: 1.25;
 }
 
 .modal-open {
@@ -1037,9 +1124,17 @@ button:focus-visible {
     line-height: 1.02;
   }
 
-  .signatories-card p {
+  .signatories-content > p {
     padding: 20px;
     font-size: 1rem;
+  }
+
+  .party-group summary {
+    padding: 13px 14px;
+  }
+
+  .candidate-list {
+    grid-template-columns: 1fr;
   }
 
   .section-image-break-grid {
