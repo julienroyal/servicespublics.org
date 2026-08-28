@@ -646,7 +646,7 @@ strong {
   min-width: 0;
 }
 
-.signatories-content > p {
+.signatories-content > .signatories-intro {
   margin: 0;
   padding: clamp(20px, 3vw, 34px);
   background: var(--scfp-blue);
@@ -656,8 +656,21 @@ strong {
   line-height: 1.48;
 }
 
-.signatories-content > p strong {
+.signatories-content > .signatories-intro strong {
   color: inherit;
+}
+
+.signatories-updated {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.signatories-updated time {
+  color: var(--scfp-blue);
 }
 
 .party-list {
@@ -719,6 +732,13 @@ strong {
   padding: 0;
   border-top: 2px solid var(--scfp-blue);
   list-style: none;
+}
+
+.candidate-list-empty {
+  margin: 0;
+  padding: 1rem 1.25rem 1.15rem;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .candidate-list li {
@@ -1124,7 +1144,7 @@ button:focus-visible {
     line-height: 1.02;
   }
 
-  .signatories-content > p {
+  .signatories-content > .signatories-intro {
     padding: 20px;
     font-size: 1rem;
   }
